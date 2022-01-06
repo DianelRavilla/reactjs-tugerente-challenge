@@ -32,4 +32,4 @@ Al presentar la prueba resuelta, colocar el APIKEY en el readme o en el .env del
 ## COMPLICACIONES
 - Conocimiento de la API.
 - Conocimiento de parametrización y busqueda por filtros.
-- Conocimiento del manejo de Headers para consultas con React.
+- Manejo de Headers para consultas a traves de API con React.
