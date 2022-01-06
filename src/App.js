@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import './assets/css/App.css';
+import './assets/css/style.css';
+
+// IMPORTANDO COMPONENTES
+import Header from './components/Header';
+import SpinLogo from './components/SpinLogo';
+import DropDown from './components/DropDown';
 
 function App() {
+  var apiurl = "https://back.implementaconbubo.com/v1/sales/customer/?simple=true";
+  var apikey = process.env.REACT_APP_API_KEY;
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <link
+        rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+        crossOrigin="anonymous"
+      />
+      <Header />
+      <DropDown
+        api_url={apiurl}
+        api_key={apikey}
+      />
     </div>
   );
 }

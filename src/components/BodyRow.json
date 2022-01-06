@@ -1,0 +1,32 @@
+{
+    "filter": {
+        "filters": [
+            {
+                "field": "reference_name",
+                "operator": "contains",
+                "ignoreCase": true,
+                "value": ""
+            },
+            {
+                "field": "nit",
+                "operator": "contains",
+                "ignoreCase": true,
+                "value": ""
+            },
+            {
+                "field": "name",
+                "operator": "contains",
+                "ignoreCase": true,
+                "value": ""
+            },
+            {
+                "field": "reference_name",
+                "operator": "contains",
+                "ignoreCase": true,
+                "value": ""
+            }
+        ]
+    },
+    "skip": 0,
+    "take": 5
+}

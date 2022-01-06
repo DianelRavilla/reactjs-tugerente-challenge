@@ -1,0 +1,134 @@
+@font-face {
+    font-family: Geometos;
+    src: url(../fuentes/Geometos.ttf);
+}
+
+a{
+    text-decoration: none;
+}
+
+.page-header{
+    /* COLORS */
+    background-color: #2F2F35;
+    color: #EAEAEA;
+
+    /* FONT */
+    font-size: 2vmin;
+    font-family: Geometos;
+
+    /* MARGIN */
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 15ch;
+    padding-right: 15ch;
+    height: 10vmin;
+}
+
+.page-header span p {
+    color: #EAEAEA;
+}
+
+.page-header-img{
+    width: 5vmin;
+    height: 5vmin;
+}
+
+.inline-element{
+    display: inline;
+    margin-left: 2vmin;
+    margin-right: 2vmin;
+}
+
+.position-element{
+    display: flex;
+    align-items: center;
+}
+
+.left-header{
+    margin-right: auto;
+}
+
+.right-header{
+    margin-left: auto;
+}
+
+.selected{
+    background-color: #000000;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 3.5vmin;
+    padding-bottom: 3.5vmin;
+}
+
+.search-bar{
+    background-color: #dfdfdf;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    padding-left: 10ch;
+    padding-right: 10ch;
+    margin-top: 0ch;
+    margin-bottom: 0ch;
+    height: 10vmin;
+}
+
+.search-bar span{
+    display: flex;
+    margin-left: 2vmin;
+    margin-right: 2vmin;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-label{
+    font-size: 1.8vmin;
+    width: 15%;
+}
+
+.search-dropdown{
+    width: 80%;
+}
+
+.search-dropdown-element{
+    font-size: 1.5em;
+    border: 1px solid #ebebeb;
+    border-radius: 0.3em;
+    box-shadow: none;
+    border-color: #000000;
+    width: 100%;
+}
+
+.bar{
+    width: 100%;
+    height: 3ch;
+    background-color: rgb(238, 238, 238);
+    border-radius: 1vmin;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 2.5ch;
+    max-lines: 20;
+}
+
+.bar:hover{
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%{
+        background-color: #cecece;
+    }
+    50%{
+        background-color: white;
+    }
+    100%{
+        background-color: #cecece;
+    }
+}
+
+.loading-status{
+    font-family: Geometos;
+    font-size: 1.8vmin;
+    width: 15%;
+    padding-top: 2vmin;
+}
