@@ -21,6 +21,24 @@ class DropDown extends Component {
         showModal: false,
     };
 
+    async componentDidMount() {
+        await this.fetchData();
+    }
+
+    handleChange = selectedOption => {
+        this.setState({ selectedOption });
+        console.log(`Option selected:`, selectedOption);
+    };
+
+    getValue = () => {
+        const { selectedOption } = this.state;
+        return selectedOption;
+    }
+
+    staticOption = () => {
+        options.push({ "value": "new", "label": "NUEVO CLIENTE" });
+    }
+
     // METODO FETCH
     fetchData = async () => {
         this.setState({ loading: true });
@@ -36,7 +54,7 @@ class DropDown extends Component {
             return;
         }
         else if (CTRL == 0) {
-            options.push({ "value": "new", "label": "NUEVO CLIENTE" });
+            this.staticOption();
             myHeaders.append("Data-Operations", '{"skip": "0", "take":' + TAKE + '}');
             CTRL = -1;
         } else {
@@ -67,20 +85,6 @@ class DropDown extends Component {
         }
     };
 
-    async componentDidMount() {
-        await this.fetchData();
-    }
-
-    handleChange = selectedOption => {
-        this.setState({ selectedOption });
-        console.log(`Option selected:`, selectedOption);
-    };
-
-    getValue = () => {
-        const { selectedOption } = this.state;
-        return selectedOption;
-    }
-
     render() {
         const { selectedOption } = this.state;
         let addModalClose = () => this.setState({ showModal: false });
@@ -103,6 +107,30 @@ class DropDown extends Component {
                         placeholder="Seleccione una opción o escriba una palabra clave"
                         maxMenuHeight={750}
                         onMenuScrollToBottom={this.fetchData}
+                        // CAMBIA EL ESTILO DE LA PRIMERA OPCIÓN
+                        styles={{
+                            option: (provided, state) => ({
+                                ...provided,
+                                borderBottom: '1px dotted pink',
+                                padding: 20,
+                            }),
+                            control: (provided, state) => ({
+                                ...provided,
+                                width: '100%', 
+                                border: '1px solid #ccc',
+                                borderRadius: '5px',
+                                boxShadow: 'none',
+                                '&:hover': {
+                                    border: '1px solid #ccc',
+                                    boxShadow: 'none',
+                                },
+                            }),
+                            singleValue: (provided, state) => {
+                                const opacity = state.isDisabled ? 0.5 : 1;
+                                const transition = 'opacity 300ms';
+                                return { ...provided, opacity, transition };
+                            }
+                        }}
                     />
                 </span>
                 <span className="loading-status">
