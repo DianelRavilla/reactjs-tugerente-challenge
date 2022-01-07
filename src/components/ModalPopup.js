@@ -90,6 +90,19 @@ export default class ModalPopup extends Component {
                                                 </select>
                                             </div>
                                         </FormGroup>
+                                        <FormGroup>
+                                            <Button variant="success" style={
+                                                {
+                                                    marginTop: '30px',
+                                                    marginLeft: '12px',
+                                                    color: 'white'
+                                                }
+                                            }
+                                                type="submit"
+                                            >
+                                                Guardar
+                                            </Button>
+                                        </FormGroup>
                                     </Form>
                                 </div>
                             </form>
@@ -99,9 +112,8 @@ export default class ModalPopup extends Component {
 
                     <Modal.Footer>
 
-                        <Button variant="success">Guardar</Button>
-                        <Button variant="danger" onClick={this.props.onHide}>Close</Button>
-
+                        <Button variant="danger" onClick={this.props.onHide}>Cerrar</Button>
+                        
                     </Modal.Footer>
 
                 </Modal>
