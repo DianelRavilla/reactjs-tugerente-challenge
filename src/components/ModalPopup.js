@@ -25,14 +25,6 @@ export default class ModalPopup extends Component {
         console.log(this.state);
     }
 
-    sendToServer() {
-        if (this.state.name === '' || this.state.nit === '' || this.state.phone === '' || this.state.email === '' || this.state.city === '') {
-            alert('Debe completar todos los campos');
-        } else {
-            console.log("ENVIANDO A SERVIDOR");
-        }
-    }
-
     render() {
         return (
             <div className="modal-popup">
@@ -111,9 +103,7 @@ export default class ModalPopup extends Component {
                     </Modal.Body>
 
                     <Modal.Footer>
-
                         <Button variant="danger" onClick={this.props.onHide}>Cerrar</Button>
-                        
                     </Modal.Footer>
 
                 </Modal>
